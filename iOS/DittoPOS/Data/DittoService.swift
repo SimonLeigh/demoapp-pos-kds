@@ -33,12 +33,12 @@ final class DittoInstance {
             appID: Env.DITTO_APP_ID,
             token: Env.DITTO_PLAYGROUND_TOKEN,
             enableDittoCloudSync: false,
-            customAuthURL: URL(string: "https://m1tpgv.cloud.dittolive.app")
+            customAuthURL: URL(string: Env.DITTO_AUTH_URL)
         ), persistenceDirectory: persistenceDirURL)
         
         ditto.updateTransportConfig { transportConfig in
           // Set the Ditto Websocket URL
-            transportConfig.connect.webSocketURLs.insert("wss://m1tpgv.cloud.dittolive.app")
+            transportConfig.connect.webSocketURLs.insert(Env.DITTO_WS_URL)
         }
         
         Task {

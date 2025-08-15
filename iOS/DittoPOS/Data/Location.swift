@@ -48,6 +48,7 @@ extension Location {
             args: [
                 "new": [
                     "_id": id,
+                    "id": id,
                     "name": name,
                     "saleItemIds": saleItemIds
                 ]
@@ -65,6 +66,7 @@ extension Location {
             args: [
                 "new": [
                     "_id": id,
+                    "id": id,
                     "name": name,
                     "saleItemIds": saleItemIds
                 ]

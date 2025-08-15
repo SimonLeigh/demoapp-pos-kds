@@ -63,6 +63,9 @@ extension Transaction {
                 "new":
                     [
                         "_id": _id,
+                        "id": _id["id"]!,
+                        "locationId": _id["locationId"]!,
+                        "orderId": _id["orderId"]!,
                         "createdOn": createdOn,
                         "type": type,
                         "status": status,

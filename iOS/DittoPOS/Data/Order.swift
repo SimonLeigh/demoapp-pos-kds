@@ -212,6 +212,8 @@ extension Order {
             args: [
                 "new": [
                     "_id": _id,
+                    "id": _id["id"]!,
+                    "locationId": _id["locationId"]!,
                     "deviceId": deviceId,
                     "saleItemIds": saleItemIds,
                     "transactionIds": transactionIds,

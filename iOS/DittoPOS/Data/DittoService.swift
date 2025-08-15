@@ -32,8 +32,14 @@ final class DittoInstance {
         ditto = Ditto(identity: .onlinePlayground(
             appID: Env.DITTO_APP_ID,
             token: Env.DITTO_PLAYGROUND_TOKEN,
-            enableDittoCloudSync: true
+            enableDittoCloudSync: false,
+            customAuthURL: URL(string: "https://m1tpgv.cloud.dittolive.app")
         ), persistenceDirectory: persistenceDirURL)
+        
+        ditto.updateTransportConfig { transportConfig in
+          // Set the Ditto Websocket URL
+            transportConfig.connect.webSocketURLs.insert("wss://m1tpgv.cloud.dittolive.app")
+        }
         
         Task {
             // disable strict mode - allows for DQL with counters and objects as CRDT maps, must be called before startSync

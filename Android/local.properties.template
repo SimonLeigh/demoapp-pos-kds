@@ -1,3 +1,5 @@
 # Ditto configuration
 dittoOnlinePlaygroundAppId=""
 dittoOnlinePlaygroundToken=""
+dittoAuthUrl=""
+dittoWsUrl=""

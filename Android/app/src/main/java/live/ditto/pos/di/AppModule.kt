@@ -23,12 +23,16 @@ internal object AppModule {
     fun provideDittoManager(
         @ApplicationContext context: Context,
         @DittoOnlinePlaygroundAppId onlinePlaygroundAppId: String,
-        @DittoOnlinePlaygroundAppToken dittoOnlinePlaygroundAppToken: String
+        @DittoOnlinePlaygroundAppToken dittoOnlinePlaygroundAppToken: String,
+        @DittoAuthUrl dittoAuthUrl: String,
+        @DittoWsUrl dittoWsUrl: String
     ): DittoManager {
         return DittoManager(
             context = context,
             dittoOnlinePlaygroundAppId = onlinePlaygroundAppId,
-            dittoOnlinePlaygroundToken = dittoOnlinePlaygroundAppToken
+            dittoOnlinePlaygroundToken = dittoOnlinePlaygroundAppToken,
+            dittoAuthUrl = dittoAuthUrl,
+            dittoWsUrl = dittoWsUrl
         )
     }
 
@@ -50,6 +54,18 @@ internal object AppModule {
     @Provides
     fun provideDittoOnlinePlaygroundAppToken(): String {
         return BuildConfig.DITTO_ONLINE_PLAYGROUND_TOKEN
+    }
+
+    @DittoAuthUrl
+    @Provides
+    fun provideDittoAuthUrl(): String {
+        return BuildConfig.DITTO_AUTH_URL
+    }
+
+    @DittoWsUrl
+    @Provides
+    fun provideDittoWsUrl(): String {
+        return BuildConfig.DITTO_WS_URL
     }
 
     @Provides

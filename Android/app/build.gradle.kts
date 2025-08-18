@@ -39,6 +39,18 @@ android {
             "DITTO_ONLINE_PLAYGROUND_TOKEN",
             getLocalProperty("dittoOnlinePlaygroundToken")
         )
+
+        buildConfigField(
+            "String",
+            "DITTO_AUTH_URL",
+            getLocalProperty("dittoAuthUrl")
+        )
+
+        buildConfigField(
+            "String",
+            "DITTO_WS_URL",
+            getLocalProperty("dittoWsUrl")
+        )
     }
 
     buildTypes {

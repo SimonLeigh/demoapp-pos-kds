@@ -11,6 +11,7 @@ data class Location(
     fun serializeAsMap(): Map<String, Any> {
         return mapOf(
             "_id" to id,
+            "id" to id,
             "name" to name,
             "saleItemIds" to saleItemIds
         )

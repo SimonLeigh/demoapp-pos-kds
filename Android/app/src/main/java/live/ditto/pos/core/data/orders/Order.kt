@@ -35,6 +35,8 @@ data class Order(
         val orderMap = mutableMapOf<String, Any>()
         return orderMap.apply {
             this["_id"] = id
+            this["id"] = id["id"] ?: ""
+            this["locationId"] = id["locationId"] ?: ""
             this["createdOn"] = createdOn
             this["deviceId"] = deviceId
             saleItemIds?.let { this["saleItemIds"] = it }

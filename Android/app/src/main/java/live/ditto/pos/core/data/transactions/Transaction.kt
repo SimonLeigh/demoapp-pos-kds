@@ -15,6 +15,9 @@ data class Transaction(
     fun serializeAsMap(): Map<String, Any> {
         return mapOf(
             "_id" to id,
+            "id" to (id["id"] ?: ""),
+            "locationId" to (id["locationId"] ?: ""),
+            "orderId" to (id["orderId"] ?: ""),
             "createdOn" to createdOn,
             "type" to type,
             "status" to status,

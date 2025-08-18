@@ -149,8 +149,9 @@ fun getLocalProperty(key: String, file: String = "local.properties"): String {
             properties.load(reader)
         }
     } else {
-        error("File not found")
+        println("Warning: $file not found. Using empty values for configuration.")
+        println("Please create a $file file from local.properties.template and add your Ditto credentials.")
     }
 
-    return properties.getProperty(key)
+    return "\"${properties.getProperty(key, "")}\""
 }
